@@ -1,3 +1,72 @@
-<p>
-  jd-scoring works!
-</p>
+<div class="page-heading">
+  Upload JD
+</div>
+
+<!-- Upload JD -->
+<div class="container">
+  <div class="row no-margin file-input-container">
+    <div class='col-sm-8 file-input'>
+      <input type="file" name="jdFile" id="jdFile" (change)="onFileChange($event.target.files)" />
+      <div class='label' #labelImport id="lblBadgeData">Select Job Description</div>
+    </div>
+    <div class="col-sm-4">
+      <span class='button' (click)="onUpload()">Upload
+        <fa-icon [icon]="faUpload"></fa-icon>
+      </span>
+    </div>
+  </div>
+</div>
+
+<!-- Loading spinner -->
+<div class="text-center" [hidden]="!showLoader">
+  <div class="spinner-border text-primary m-1" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+
+<!-- Response -->
+<div class="page-heading" *ngIf="showResponse">
+  Response
+</div>
+<div class="container" *ngIf="showResponse">
+  <table class="tbl-no-border">
+    <tr class="odd">
+      <th></th>
+      <th>Word Count</th>
+      <th>Word Count</th>
+      <th>Word Count</th>
+      <th>Word Count</th>
+      <th>Word Count</th>
+      <th>Word Count</th>
+    </tr>
+    <tr class="even">
+      <td>Score</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+    </tr>
+    <tr class="odd">
+      <td>Benchmark</td>
+      <td>7</td>
+      <td>7</td>
+      <td>7</td>
+      <td>7</td>
+      <td>7</td>
+      <td>7</td>
+    </tr>
+  </table>
+</div>
+
+<!-- Recommendations -->
+<div class="page-heading" *ngIf="showResponse">
+  Recommendations
+</div>
+<div class="container" *ngIf="showResponse">
+  <div class="list" *ngFor="let recommendation of recommendations; let i = index">
+    <span class="number">{{ i + 1 }}</span>
+    <span>{{ recommendation }}</span>
+  </div>
+</div>

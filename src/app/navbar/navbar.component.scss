@@ -1,17 +1,21 @@
 nav {
-    top: 65px;
+    top: 60px;
     position: fixed;
     display: block;
     width: 100%;
     text-align: right;
-    padding: 1rem 4rem;
+    padding: 12px 4rem;
     background-color: white;
+    z-index: 1;
+    box-shadow: 0 0.75rem 1.5rem rgba(18, 38, 63, 0.03);
+    font-weight: 400;
 
     div {
         display: inline-block;
         padding: 0 18px;
         cursor: pointer;
         color: #545a6d;
+        font-size: 0.9em;
 
         &:focus {
             outline: none;
@@ -19,6 +23,6 @@ nav {
     }
 
     .active {
-        color: #5386e8;
+        color: var(--primary);
     }
 }

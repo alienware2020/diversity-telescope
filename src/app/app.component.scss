@@ -1,5 +1,7 @@
-:root {
-    --btn-background: #46467e;
+.title {
+    font-size: 1.2em;
+    color: #ffffff;
+    font-weight: 500;
 }
 
 .header {
@@ -9,6 +11,7 @@
     width: 100%;
     height: 60px;
     top: 0;
+    z-index: 1;
     /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
 }
 
@@ -17,117 +20,6 @@
     height: auto;
 }
 
-.title {
-    font-size: 1.3em;
-    color: #ffffff;
-    padding-top: 6px;
-}
-
-.sub-title {
-    color: #ffffff;
-    font-size: 0.8em;
-    font-weight: 300;
-    padding-top: 4px;
-}
-
-.content {
-    height: 90vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    padding: 7rem 2rem;
-}
-
-.transparent-container {
-    border-radius: 6px;
-    background-color: #ffffff60;
-    padding: 1rem;
-    width: 50vw;
-    max-width: 550px;
-}
-
-.form-container {
-    background-color: #ffffff;
-    padding: 1rem;
-    border-radius: 6px;
-}
-
-.form-container .row {
-    padding-left: 15px;
-    margin-bottom: 15px;
-}
-
-.heading {
-    padding: 1rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    font-size: 1.3rem;
-    border-bottom: 1px dashed #cdcdcd;
-    margin-bottom: 1.5rem;
-}
-
-.label {
-    color: #5b6166;
-    font-size: 0.9em;
-    font-weight: 400;
-    text-align: left;
-}
-
-.file-input {
-    text-align: center;
-    text-align: left;
-    background: #fff;
-    position: relative;
-    border-radius: 0.25rem;
-    border: 1.5px dashed #c8c8c8;
-}
-
-.file-input > [type="file"] {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    z-index: 10;
-    cursor: pointer;
-}
-
-.file-input > .button {
-    display: inline-block;
-    cursor: pointer;
-    background: var(--btn-background);
-    padding: 8px 16px;
-    border-radius: 0.25rem;
-    margin-right: 8px;
-    color: white;
-    font-size: 0.8em;
-}
-
-.file-input:hover > .button {
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
-    background-color: #46467e;
-}
-
-.file-input > .label {
-    font-size: 0.8em;
-    color: #b0b0b0;
-}
-
-.file-input > .label.-chosen {
-    opacity: 1;
-}
-
-input[type="submit"] {
-    background: #ffa500;
-    color: white;
-    font-size: 0.85em;
-    border: none;
-    padding: 0.4em 1.8em;
-    font-weight: 500;
-    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
-}
-
 .main-view {
-    margin-top: 118px;
+    margin: 105px 5rem 0 5rem;
 }

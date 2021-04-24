@@ -1,0 +1,81 @@
+<div class="page-heading">
+  Upload Employee Information
+</div>
+
+<!-- Upload JD -->
+<div class="container">
+  <div class="row no-margin file-input-container">
+    <div class='col-sm-8 file-input'>
+      <input type="file" name="jdFile" multiple id="jdFile" (change)="onFileChange($event.target.files)" />
+      <div class='label' #labelImport id="lblBadgeData">Select Employee information</div>
+    </div>
+    <div class="col-sm-4">
+      <span class='button' (click)="onUpload()">Upload
+        <fa-icon [icon]="faUpload"></fa-icon>
+      </span>
+    </div>
+  </div>
+</div>
+
+<!-- Loading spinner -->
+<div class="text-center" [hidden]="!showLoader">
+  <div class="spinner-border text-primary m-1" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+
+<!-- Response -->
+<div class="page-heading" *ngIf="showCharts">
+  Response
+</div>
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <div class="row" *ngIf="showCharts">
+    <div class="col-sm-4">
+      <div class="container">
+        <div class="title">Attrition Prediction Rate</div>
+        <apx-chart [series]="attritionPredictionChartOptions.series" [stroke]="attritionPredictionChartOptions.stroke"
+          [markers]="attritionPredictionChartOptions.markers" [xaxis]="attritionPredictionChartOptions.xaxis"
+          [yaxis]="attritionPredictionChartOptions.yaxis" [chart]="attritionPredictionChartOptions.chart">
+        </apx-chart>
+      </div>
+    </div>
+
+    <div class="col-sm-8 container padding-vertical">
+      <div class="row">
+        <div class="col-sm-6 px-4 pb-4">
+          <select formControlName="quarter" class="form-select" (change)="changeQuarter($event)">
+            <option disabled>Select quarter</option>
+            <option *ngFor="let quarter of quarters">{{quarter}}</option>
+          </select>
+        </div>
+        <div class="col-sm-6 text-right pr-5">
+          <span class="mode-link" [ngClass]="{'active': mode == 'gender'}"
+            (click)="mode = 'gender'; UpdateCharts()">Gender</span>
+          <span class="mode-link" [ngClass]="{'active': mode == 'region'}"
+            (click)="mode = 'region'; UpdateCharts()">Region</span>
+          <span class="mode-link" [ngClass]="{'active': mode == 'background'}"
+            (click)="mode = 'background'; UpdateCharts()">Background</span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="title">Current</div>
+          <apx-chart [series]="currentChartOptions.series" [legend]="currentChartOptions.legend"
+            [chart]="currentChartOptions.chart" [labels]="getChartLabels()"></apx-chart>
+        </div>
+        <div class="col-sm-4">
+          <div class="title">Attrition</div>
+          <apx-chart [series]="attritionChartOptions.series" [legend]="currentChartOptions.legend"
+            [chart]="currentChartOptions.chart" [labels]="getChartLabels()"></apx-chart>
+        </div>
+        <div class="col-sm-4">
+          <div class="title">Post Attrition</div>
+          <apx-chart [series]="postAttritionChartOptions.series" [legend]="currentChartOptions.legend"
+            [chart]="currentChartOptions.chart" [labels]="getChartLabels()"></apx-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

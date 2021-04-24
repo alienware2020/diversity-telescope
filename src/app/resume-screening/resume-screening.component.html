@@ -1,3 +1,65 @@
-<p>
-  resume-screening works!
-</p>
+<div class="page-heading">
+  Upload Resumes
+</div>
+
+<!-- Upload JD -->
+<div class="container">
+  <div class="row no-margin file-input-container">
+    <div class='col-sm-8 file-input'>
+      <input type="file" name="jdFile" multiple id="jdFile" (change)="onFileChange($event.target.files)" />
+      <div class='label' #labelImport id="lblBadgeData">Select Resumes</div>
+    </div>
+    <div class="col-sm-4">
+      <span class='button' (click)="onUpload()">Upload
+        <fa-icon [icon]="faUpload"></fa-icon>
+      </span>
+    </div>
+  </div>
+</div>
+
+<!-- Loading spinner -->
+<div class="text-center" [hidden]="!showLoader">
+  <div class="spinner-border text-primary m-1" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+
+<!-- Response -->
+<div class="page-heading" *ngIf="showCharts">
+  Response
+</div>
+
+<div class="row" *ngIf="showCharts">
+  <div class="col-sm-3">
+    <div class="container text-center">
+      <div class="count">56/90</div>
+      <div class="small">Selected</div>
+      <div class="pt-3">
+        <span class='button'>Download
+          <fa-icon [icon]="faFileDownload"></fa-icon>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="container padding-vertical">
+      <div class="title">Gender</div>
+      <apx-chart [series]="genderChartOptions.series" [legend]="chartOptions.legend" [chart]="chartOptions.chart"
+        [labels]="genderChartOptions.labels" [title]="genderChartOptions.title"></apx-chart>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="container padding-vertical">
+      <div class="title">Region</div>
+      <apx-chart [series]="regionChartOptions.series" [legend]="chartOptions.legend" [chart]="chartOptions.chart"
+        [labels]="regionChartOptions.labels"></apx-chart>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="container padding-vertical">
+      <div class="title">Background</div>
+      <apx-chart [series]="backgroundChartOptions.series" [legend]="chartOptions.legend" [chart]="chartOptions.chart"
+        [labels]="backgroundChartOptions.labels"></apx-chart>
+    </div>
+  </div>
+</div>
