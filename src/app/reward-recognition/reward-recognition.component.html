@@ -1,3 +1,108 @@
-<p>
-  reward-recognition works!
-</p>
+<div class="page-heading">
+  Feedback
+</div>
+
+
+<div class="row">
+  <div class="col-sm-7">
+    <div class="container">
+      <table class="tbl-no-border">
+        <tr class="odd">
+          <th></th>
+          <th>Technical</th>
+          <th>Leadership</th>
+          <th>Business</th>
+        </tr>
+        <tr class="even">
+          <td>Quarter 1</td>
+          <td>
+            <ngb-rating [(rate)]="technicalQ1" max="5"></ngb-rating><span class="rating-value"
+              [hidden]="!(technicalQ1 > 0)">{{technicalQ1}}</span>
+          </td>
+          <td>
+            <ngb-rating [(rate)]="leadershipQ1" max="5"></ngb-rating><span class="rating-value"
+              [hidden]="!(leadershipQ1 > 0)">{{leadershipQ1}}</span>
+          </td>
+          <td>
+            <ngb-rating [(rate)]="businessQ1" max="5"></ngb-rating><span class="rating-value"
+              [hidden]="!(businessQ1 > 0)">{{businessQ1}}</span>
+          </td>
+        </tr>
+        <tr class="odd">
+          <td>Quarter 2</td>
+          <td>
+            <ngb-rating [(rate)]="technicalQ2" max="5"></ngb-rating><span class="rating-value"
+              [hidden]="!(technicalQ2 > 0)">{{technicalQ2}}</span>
+          </td>
+          <td>
+            <ngb-rating [(rate)]="leadershipQ2" max="5"></ngb-rating><span class="rating-value"
+              [hidden]="!(leadershipQ2 > 0)">{{leadershipQ2}}</span>
+          </td>
+          <td>
+            <ngb-rating [(rate)]="businessQ2" max="5"></ngb-rating><span class="rating-value"
+              [hidden]="!(businessQ2 > 0)">{{businessQ2}}</span>
+          </td>
+        </tr>
+        <tr class="even">
+          <td>Quarter 3</td>
+          <td>
+            <ngb-rating [(rate)]="technicalQ3" max="5"></ngb-rating><span class="rating-value"
+              [hidden]="!(technicalQ3 > 0)">{{technicalQ3}}</span>
+          </td>
+          <td>
+            <ngb-rating [(rate)]="leadershipQ3" max="5"></ngb-rating><span class="rating-value"
+              [hidden]="!(leadershipQ3 > 0)">{{leadershipQ3}}</span>
+          </td>
+          <td>
+            <ngb-rating [(rate)]="businessQ3" max="5"></ngb-rating><span class="rating-value"
+              [hidden]="!(businessQ3 > 0)">{{businessQ3}}</span>
+          </td>
+        </tr>
+        <tr class="odd">
+          <td>Quarter 4</td>
+          <td>
+            <ngb-rating [(rate)]="technicalQ4" max="5"></ngb-rating><span class="rating-value"
+              [hidden]="!(technicalQ4 > 0)">{{technicalQ4}}</span>
+          </td>
+          <td>
+            <ngb-rating [(rate)]="leadershipQ4" max="5"></ngb-rating><span class="rating-value"
+              [hidden]="!(leadershipQ4 > 0)">{{leadershipQ4}}</span>
+          </td>
+          <td>
+            <ngb-rating [(rate)]="businessQ4" max="5"></ngb-rating><span class="rating-value"
+              [hidden]="!(businessQ4 > 0)">{{businessQ4}}</span>
+          </td>
+        </tr>
+      </table>
+
+      <div class="mt-4">
+        Average promotion velocity: <span class="count">5</span> <span class="year">years</span>
+      </div>
+      <div>
+        Time in the rank: <span class="count">3</span> <span class="year">years</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-5">
+    <div class="container">
+      <div class="sub-title">Initiatives</div>
+      <div class="row">
+        <div class="col-sm-6">
+          <label class="form-label">Dolar saving</label>
+          <input type="number" class="form-control" name="dolar-saving">
+        </div>
+        <div class="col-sm-6">
+          <label class="form-label">NPS Improvement</label>
+          <input type="number" class="form-control" name="dolar-saving">
+        </div>
+      </div>
+
+      <div class="text-right mt-4">
+        <span class='button' (click)="onUpload()">Calculate
+          <fa-icon [icon]="faCalculator"></fa-icon>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

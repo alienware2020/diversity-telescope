@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { faUpload, faPaperPlane, faMapMarker, faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import { faCalculator, faPaperPlane, faCheck, faCaretDown } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-salary-optimization',
@@ -12,6 +12,8 @@ export class SalaryOptimizationComponent implements OnInit {
   showResponse: boolean = false;
   faPaperPlane = faPaperPlane;
   faMapMarker = faCaretDown;
+  faCheck = faCheck;
+  faCalculator = faCalculator;
   questions: any[];
   form = new FormGroup({
     quarter: new FormControl('', Validators.required)

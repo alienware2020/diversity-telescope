@@ -92,9 +92,13 @@
   </div>
 
   <div class="col-sm-4">
+    <div class="container">
+      <label class="form-label">Expected Salary</label>
+      <input type="number" class="form-control" name="salary-expected">
+    </div>
     <div class="text-center">
       <span class='button' (click)="onUpload()">Calculate
-        <fa-icon [icon]="faPaperPlane"></fa-icon>
+        <fa-icon [icon]="faCalculator"></fa-icon>
       </span>
     </div>
 
@@ -107,12 +111,15 @@
 
     <div class="container mt-4" [hidden]='!showResponse'>
       <div class="title">Salary Prediction</div>
+
+      <!-- Score -->
+
       <div class="max-range">
         <div class="available-range"></div>
         <div class="marker">
           <fa-icon [icon]="faMapMarker"></fa-icon>
         </div>
-        <div class="expected">Expected</div>
+        <div class="expected">Expectation</div>
       </div>
       <div>
         <span class="grid">
@@ -130,6 +137,13 @@
       <div class="pt-5">
         <label class="form-label">Salary Offered</label>
         <input type="number" class="form-control" name="salary-offered">
+      </div>
+
+      <div class="text-right mt-4">
+        <span class='button' (click)="onUpload()">Approve
+          <fa-icon [icon]="faCheck"></fa-icon>
+        </span>
+        <a class="btn-cancel" (click)="onUpload()">Cancel</a>
       </div>
     </div>
   </div>

@@ -15,6 +15,7 @@ import { AttritionPredictionComponent } from './attrition-prediction/attrition-p
 import { RewardRecognitionComponent } from './reward-recognition/reward-recognition.component';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NgApexchartsModule,
     ReactiveFormsModule,
     FormsModule,
+    NgbModule,
     RouterModule.forRoot([
       { path: '', component: JdScoringComponent },
       { path: 'jd-scoring', component: JdScoringComponent },

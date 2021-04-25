@@ -35,18 +35,18 @@ body {
     box-shadow: 0 0.75rem 1.5rem rgba(18, 38, 63, 0.03);
 
     .title {
-        color: #495057;
+        color: var(--gray);
         font-weight: 500;
         padding: 0 15px 15px;
         text-transform: uppercase;
     }
-}
 
-.sub-title {
-    color: #ffffff;
-    font-size: 0.8em;
-    font-weight: 300;
-    padding-top: 4px;
+    .sub-title{
+        color: var(--gray);
+        font-weight: 500;
+        padding: 0 15px 15px 0;
+        text-transform: uppercase;
+    }
 }
 
 .content {
@@ -156,7 +156,7 @@ input[type="submit"] {
 }
 
 .page-heading {
-    color: #495057;
+    color: var(--gray);
     text-transform: uppercase;
     font-weight: 500;
     padding: 15px 0;
@@ -166,7 +166,7 @@ input[type="submit"] {
 .tbl-no-border {
     border: 0;
     width: 100%;
-    color: #495057;
+    color: var(--gray);
 
     th {
         font-weight: 500;
