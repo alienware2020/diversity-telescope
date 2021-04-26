@@ -6,7 +6,7 @@
 :root {
     --btn-background: #5386e8;
     --primary: #5386e8;
-    --gray: #495057;
+    --gray: #212426;
 }
 
 body {
@@ -16,10 +16,15 @@ body {
     font-size: 13.5px;
     background-color: #f7f7fa;
     font-weight: 300;
+    color: #545a6d;
 }
 
 .no-margin {
     margin: 0;
+}
+
+.no-padding {
+    padding: 0;
 }
 
 .padding-vertical {
