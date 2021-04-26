@@ -27,3 +27,31 @@ ngb-rating {
     font-size: 0.85em;
     color: var(--gray);
 }
+
+.total {
+    font-weight: 500;
+    font-size: 0.95em;
+}
+
+.sub {
+    font-size: 0.8em;
+    color: #868b91;
+}
+
+.eligibility {
+    font-size: 0.9em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: white;
+    padding: 2px 10px;
+    border-radius: 4px;
+    margin-left: 10px;
+
+    &.yes {
+        background-color: #34c38f;
+    }
+
+    &.no {
+        background-color: red;
+    }
+}

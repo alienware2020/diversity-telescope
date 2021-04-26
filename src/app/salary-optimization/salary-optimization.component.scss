@@ -7,12 +7,12 @@
     height: 3px;
     border-bottom: 1.6px solid #efefef;
     margin: 30px 0;
-    width: 370px;
+    width: 360px;
 
     .available-range {
         border-bottom: 3px solid var(--primary);
-        width: 149px;
-        margin-left: 111px;
+        width: 120px;
+        // margin-left: 120px;
     }
 
     .marker {
@@ -20,7 +20,6 @@
         margin-top: -20px;
         color: var(--primary);
         font-size: 17px;
-        margin-left: 130px;
     }
 
     .expected {
@@ -57,4 +56,8 @@
             margin-left: 0 !important;
         }
     }
+}
+
+.sub {
+    font-size: 0.8em;
 }

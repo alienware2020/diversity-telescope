@@ -57,11 +57,15 @@
     border-color: #556ee6;
 }
 
-.btn-cancel{
+.btn-cancel {
     padding: 0 10px;
     margin: 0 5px;
     cursor: pointer;
     color: rgb(47, 47, 48);
     font-size: 0.9em;
     font-weight: 500;
+}
+
+button {
+    border: none;
 }

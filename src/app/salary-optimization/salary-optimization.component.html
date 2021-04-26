@@ -18,133 +18,138 @@
   </div>
 </div> -->
 
-<div class="row">
-  <div class="col-sm-4">
-    <div class="container">
-      <div class="title text-primary">Interviewer 1</div>
-      <form [formGroup]="form" (ngSubmit)="submit()" class="form-container">
-        <div *ngFor="let question of questions; let i = index" class="border-bottom pt-3">
-          <div class="mb-4">
-            <label for="formrow-firstname-input" class="form-label">{{i + 1}}. {{question.title}}</label>
-            <div class="form-check mb-3 d-flex flex-row">
-              <div>
-                <input class="form-check-input" type="radio" name="panel1{{question.id}}" id="{{question.id}}Entry">
-                <label class="form-check-label" for="{{question.id}}Entry">
-                  Entry
-                </label>
-              </div>
-              <div>
-                <input class="form-check-input" type="radio" name="panel1{{question.id}}"
-                  id="{{question.id}}Intermediate">
-                <label class="form-check-label" for="{{question.id}}Intermediate">
-                  Intermediate
-                </label>
-              </div>
-              <div>
-                <input class="form-check-input" type="radio" name="panel1{{question.id}}" id="{{question.id}}Expert">
-                <label class="form-check-label" for="{{question.id}}Expert">
-                  Expert
-                </label>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </form>
-    </div>
-  </div>
-
-  <div class="col-sm-4">
-    <div class="container">
-      <div class="title text-primary">Interviewer 2</div>
-      <form [formGroup]="form" (ngSubmit)="submit()" class="form-container">
-        <div *ngFor="let question of questions; let i = index" class="border-bottom pt-3">
-          <div class="mb-4">
-            <label for="formrow-firstname-input" class="form-label">{{i + 1}}. {{question.title}}</label>
-            <div class="form-check mb-3 d-flex flex-row">
-              <div>
-                <input class="form-check-input" type="radio" name="panel2{{question.id}}"
-                  id="panel2{{question.id}}Entry">
-                <label class="form-check-label" for="panel2{{question.id}}Entry">
-                  Entry
-                </label>
-              </div>
-              <div>
-                <input class="form-check-input" type="radio" name="panel2{{question.id}}"
-                  id="panel2{{question.id}}Intermediate">
-                <label class="form-check-label" for="panel2{{question.id}}Intermediate">
-                  Intermediate
-                </label>
-              </div>
-              <div>
-                <input class="form-check-input" type="radio" name="panel2{{question.id}}"
-                  id="panel2{{question.id}}Expert">
-                <label class="form-check-label" for="panel2{{question.id}}Expert">
-                  Expert
-                </label>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="container">
+        <div class="title text-primary">Interviewer 1</div>
+        <div class="form-container">
+          <div *ngFor="let question of questions; let i = index" class="border-bottom pt-3">
+            <div class="mb-4">
+              <label for="formrow-firstname-input" class="form-label">{{i + 1}}. {{question.title}}</label>
+              <div class="form-check mb-3 d-flex flex-row">
+                <div>
+                  <input class="form-check-input" type="radio" value="1" formControlName="panel1{{question.id}}"
+                    id="{{question.id}}Entry">
+                  <label class="form-check-label" for="{{question.id}}Entry">
+                    Entry
+                  </label>
+                </div>
+                <div>
+                  <input class="form-check-input" type="radio" value="2" formControlName="panel1{{question.id}}"
+                    id="{{question.id}}Intermediate">
+                  <label class="form-check-label" for="{{question.id}}Intermediate">
+                    Intermediate
+                  </label>
+                </div>
+                <div>
+                  <input class="form-check-input" type="radio" value="3" formControlName="panel1{{question.id}}"
+                    id="{{question.id}}Expert">
+                  <label class="form-check-label" for="{{question.id}}Expert">
+                    Expert
+                  </label>
+                </div>
               </div>
             </div>
           </div>
         </div>
-
-      </form>
-    </div>
-  </div>
-
-  <div class="col-sm-4">
-    <div class="container">
-      <label class="form-label">Expected Salary</label>
-      <input type="number" class="form-control" name="salary-expected">
-    </div>
-    <div class="text-center">
-      <span class='button' (click)="onUpload()">Calculate
-        <fa-icon [icon]="faCalculator"></fa-icon>
-      </span>
-    </div>
-
-    <!-- Loading spinner -->
-    <div class="text-center mt-3" [hidden]="!showLoader">
-      <div class="spinner-border text-primary m-1" role="status">
-        <span class="sr-only">Loading...</span>
       </div>
     </div>
 
-    <div class="container mt-4" [hidden]='!showResponse'>
-      <div class="title">Salary Prediction</div>
-
-      <!-- Score -->
-
-      <div class="max-range">
-        <div class="available-range"></div>
-        <div class="marker">
-          <fa-icon [icon]="faMapMarker"></fa-icon>
+    <div class="col-sm-4">
+      <div class="container">
+        <div class="title text-primary">Interviewer 2</div>
+        <div class="form-container">
+          <div *ngFor="let question of questions; let i = index" class="border-bottom pt-3">
+            <div class="mb-4">
+              <label for="formrow-firstname-input" class="form-label">{{i + 1}}. {{question.title}}</label>
+              <div class="form-check mb-3 d-flex flex-row">
+                <div>
+                  <input class="form-check-input" type="radio" value="1" formControlName="panel2{{question.id}}"
+                    id="panel2{{question.id}}Entry">
+                  <label class="form-check-label" for="panel2{{question.id}}Entry">
+                    Entry
+                  </label>
+                </div>
+                <div>
+                  <input class="form-check-input" type="radio" value="2" formControlName="panel2{{question.id}}"
+                    id="panel2{{question.id}}Intermediate">
+                  <label class="form-check-label" for="panel2{{question.id}}Intermediate">
+                    Intermediate
+                  </label>
+                </div>
+                <div>
+                  <input class="form-check-input" type="radio" value="3" formControlName="panel2{{question.id}}"
+                    id="panel2{{question.id}}Expert">
+                  <label class="form-check-label" for="panel2{{question.id}}Expert">
+                    Expert
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="expected">Expectation</div>
       </div>
-      <div>
-        <span class="grid">
-          <span class="grid-pol"></span>
-          <span class="min-value">₹10L</span>
-          <span class="grid-pol" style="left: 111px;"></span>
-          <span class="min-value-prediction" style="left: 111px;">₹11L</span>
-          <span class="grid-pol" style="left: 259px;"></span>
-          <span class="max-value-prediction" style="left: 259px;">₹13.5L</span>
-          <span class="grid-pol" style="left: 370px;"></span>
-          <span class="max-value" style="left: 370px;">₹15L</span>
-        </span>
+    </div>
+
+    <div class="col-sm-4">
+      <div class="container">
+        <label class="form-label">Expected Salary <span class="sub">(in Lakhs)</span></label>
+        <input type="number" class="form-control" formControlName="expectedSalary">
+
+        <div class="text-right mt-4">
+          <button class='button' type="submit">
+            <span>Calculate
+              <fa-icon [icon]="faCalculator"></fa-icon>
+            </span>
+          </button>
+        </div>
       </div>
 
-      <div class="pt-5">
-        <label class="form-label">Salary Offered</label>
-        <input type="number" class="form-control" name="salary-offered">
+      <!-- Loading spinner -->
+      <div class="text-center mt-3" [hidden]="!showLoader">
+        <div class="spinner-border text-primary m-1" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
       </div>
 
-      <div class="text-right mt-4">
-        <span class='button' (click)="onUpload()">Approve
-          <fa-icon [icon]="faCheck"></fa-icon>
-        </span>
-        <a class="btn-cancel" (click)="onUpload()">Cancel</a>
+      <div class="container mt-4" [hidden]='!showResponse'>
+        <div class="sub-title">Salary Prediction</div>
+
+        <!-- Score -->
+
+        <div class="max-range">
+          <div class="available-range" [ngStyle]="{'margin-left.px': marginLeft}"></div>
+          <div class="marker" [ngStyle]="{'margin-left.px': markerMarginLeft}">
+            <fa-icon [icon]="faMapMarker"></fa-icon>
+          </div>
+          <div class="expected" [ngStyle]="{'margin-left.px': (markerMarginLeft - 25)}">Expectation</div>
+        </div>
+        <div>
+          <span class="grid">
+            <span class="grid-pol"></span>
+            <span class="min-value">₹30L</span>
+            <span class="grid-pol" style="left: 120px;"></span>
+            <span class="min-value-prediction" style="left: 120px;">₹32L</span>
+            <span class="grid-pol" style="left: 240px;"></span>
+            <span class="max-value-prediction" style="left: 240px;">₹34L</span>
+            <span class="grid-pol" style="left: 360px;"></span>
+            <span class="max-value" style="left: 360px;">₹36L</span>
+          </span>
+        </div>
+
+        <div class="pt-5">
+          <label class="form-label">Salary Offered <span class="sub">(in Lakhs)</span></label>
+          <input type="number" class="form-control" name="salary-offered">
+        </div>
+
+        <div class="text-right mt-4">
+          <span class='button' (click)="onApprove()">Approve
+            <fa-icon [icon]="faCheck"></fa-icon>
+          </span>
+          <a class="btn-cancel" (click)="onCancel()">Cancel</a>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</form>
