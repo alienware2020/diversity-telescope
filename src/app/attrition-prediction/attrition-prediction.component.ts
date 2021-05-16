@@ -137,7 +137,7 @@ export class AttritionPredictionComponent implements OnInit {
     };
 
     this.backgroundChartOptions = {
-      labels: ["Hindu", "Muslim", "Sikh"]
+      labels: ["IT industry", "Army veterans", "PSUs"]
     };
 
     this.UpdateCharts();

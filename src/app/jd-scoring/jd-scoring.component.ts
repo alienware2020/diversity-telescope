@@ -19,10 +19,10 @@ export class JdScoringComponent implements OnInit {
 
   ngOnInit() {
     this.recommendations = [
-      "Font style and line spacing across your resume is not consistent",
-      "You may want to quantify your achievements for better credibility",
-      "You may want to include some functional keywords for better ranking in recruiter searches.",
-      "Font style and line spacing across your resume is not consistent"
+      "A JD should be limited to 850 words/2 pages.",
+      "A JD should have more engaging words to hold the interest of applicants.",
+      "A JD with softer words is more preferred by the applicants to feel more interesting about the job role.",
+      "A JD should have key sections with detailed info avoiding any redundancy. Kindly refer attached document for more details."
     ];
   }
 
